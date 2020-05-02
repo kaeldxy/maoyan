@@ -3,15 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+require('./dao/db.js'); // 链接数据库  数据库名是  maoyan
 
 var adminUserRouter = require('./routes/adminUser');
 var frontUserRouter = require('./routes/frontUser');
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
+
 
 app.use(logger('dev'));
 app.use(express.json());

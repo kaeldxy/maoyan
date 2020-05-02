@@ -23,8 +23,8 @@ const movieSchema = mongoose.Schema({//骨架，结构
             playAs: String, //饰演的是谁
         }
     ], // 演员数组，存四个对象，每个对象是一个演员，存名字 头像路径，饰演的谁
-    Episode: [String] // 剧集数组:每⼀项是⼀个图⽚路径字符串 至少5张图片 一张大图一张小图
+    Episode: [String] // 剧集数组:每⼀项是⼀个图⽚路径字符串 5张图片 一张大图一张小图
 }, { versionKey: false });
-const movieModule = mongoose.model('movies', studentsSchema);//创建模型
+const movieModule = mongoose.model('movies', movieSchema);//创建模型
 
 module.exports = movieModule;

@@ -3,10 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const { httpPoxy } = require("./utils/autoRequest");
+const { httpPoxy } = require("./utils/autoRequest.js");
 
-var adminUserRouter = require('./routes/adminUser');
-var frontUserRouter = require('./routes/frontUser');
+var adminUserRouter = require('./routes/adminUser.js');
+var frontUserRouter = require('./routes/frontUser.js');
 
 var app = express();
 

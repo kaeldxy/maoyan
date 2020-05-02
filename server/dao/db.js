@@ -7,5 +7,9 @@ db.once('open', function () {
     console.log("we're connected!");
 });
 
-require("./models/movieModule");
-require("./models/usersModel");
+require("./module/adminUserModule.js");
+require("./module/frontUserModule.js");
+require("./module/movieModule.js");
+require("./module/cinemaModule.js");
+require("./module/theaterModule.js");
+require('./module/seatModule.js');
