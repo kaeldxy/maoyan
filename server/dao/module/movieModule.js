@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const movieSchema = mongoose.Schema({//骨架，结构
+const movieSchema = mongoose.Schema({  //骨架，结构
     cname: String, // 电影中文名
     ename: String, // 电影英⽂名
     type: [String], // 电影的类型 用数组保存，因为有可能有更多类型

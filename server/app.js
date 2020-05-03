@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./dao/db.js'); // 链接数据库  数据库名是  maoyan
 
-var adminUserRouter = require('./routes/adminUser');
-var frontUserRouter = require('./routes/frontUser');
+var userRouter = require('./routes/user.js');
+
 var app = express();
 
 
@@ -19,8 +19,8 @@ app.use(cookieParser());
 
 
 
-app.use('/adminUser', adminUserRouter);
-app.use('/frontUser', frontUserRouter);
+app.use('/user', userRouter);
+
 
 
 

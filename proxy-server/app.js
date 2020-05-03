@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { httpPoxy } = require("./utils/autoRequest.js");
 
-var adminUserRouter = require('./routes/adminUser.js');
-var frontUserRouter = require('./routes/frontUser.js');
+var userRouter = require('./routes/user.js');
+
 
 var app = express();
 
@@ -21,8 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 
-app.use('/adminUser', adminUserRouter);
-app.use('/frontUser', frontUserRouter);
+app.use('/user', userRouter);
+
 
 
 
