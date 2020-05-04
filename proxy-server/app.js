@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { httpPoxy } = require("./utils/autoRequest.js");
-
+const jwtAuth = require('./utils/authToken.js');
 var userRouter = require('./routes/user.js');
 
 
@@ -12,7 +12,11 @@ var app = express();
 
 
 app.use(logger('dev'));
+
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(jwtAuth);
 app.use('/api', httpPoxy);  //头部带api自动转发至4000server
 
 
@@ -35,7 +39,20 @@ app.use('/user', userRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
+app.use((err, req, res, next) => {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).json({
+      message: 'invalid token',
+      error: err
+    });
+  } else {
+    res.status(err.status || 500);
+    res.json({
+      message: err.message,
+      error: err
+    });
+  }
+});
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -46,5 +63,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

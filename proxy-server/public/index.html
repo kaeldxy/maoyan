@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="./favicon.ico" mce_href="./favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="./stylesheets/animate.css">
+    <script src="./javascripts/jquery-1.12.4.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        .enter-index{
+            width: 100vw;
+            height: 100vh;
+            background: url('./images/bg/bigbg.png') no-repeat top center/100% 100%;
+        }
+        .enter-index>img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .enter-index>.box{
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+        }
+        .container{
+            width: 500px;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .container>h1{
+            color: white;
+            font-size: 40px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            width: 100%;
+            height: 260px;
+            line-height: 260px;
+            text-align: center;
+        }
+        .container>p{
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            font-size: 20px;
+            letter-spacing: 2px;
+            font-weight: 100;
+        }
+        .button>a{
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            display: block;
+            font-weight: 100;
+            letter-spacing: 2px;
+            width: 200px;
+             height:60px;
+             line-height: 60px;
+             text-align: center;
+             background-color: red;
+        }
+        .button-group{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div class="enter-index">
+        <div class="box">
+            <div class="container">
+                <h1>Welcome</h1>
+                <p>前往</p>
+                <div class="button-group">
+                    <div class="button">
+                        <a  href="javascript:;">后台系统</a>
+                    </div>
+                    <div class="button">
+                        <a href="javascript:;">前台页面</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       $('.button').on('click', 'a', function (params) {
+           $(this).toggleClass('zoomOutRight')
+       })
+    </script>
+</body>
+</html>

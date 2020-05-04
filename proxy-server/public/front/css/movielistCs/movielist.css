@@ -1,0 +1,275 @@
+.movielist_banner{
+    height: 321px;
+    background-color: #392f59;
+    border-bottom: 120px solid #fff;
+}
+.movielist_banner_container{
+    width: 1194px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* background-color: rgb(110, 87, 87); */
+}
+.movielist_banner_main{
+    width: 1168px;
+    /* height: 200px; */
+    /* background-color: red; */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    display: flex;
+    z-index: 2;
+    /* justify-content: space-between; */
+}
+.movielist_banner_main_left{
+    position: relative;
+}
+.movielist_banner_main_left>img{
+    width: 292px;
+    height: 292px;
+    display: block;
+    border: 4px solid #fff;
+}
+.movielist_banner_main_left>a{
+    display: block;
+    position: absolute;
+    top: 264px;
+    left: 4px;
+    width: 292px;
+    height: 32px;
+    line-height: 32px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+.movielist_banner_main_left>div{
+    height: 30px;
+    background-image: linear-gradient(to bottom, #f1f1f1,#fdfdfd);
+}
+.movielist_banner_main_middle{
+    padding: 8px 0 0 30px;
+    /* background-color: rgb(224, 216, 216); */
+    /* width: 300px; */
+    color: #fff;
+    font-weight: 500;
+    flex-grow: 1;
+}
+.movielist_banner_main_middle>h1{
+    font-size: 24px;
+    margin-bottom: 4px;
+    font-weight: 400;
+}
+.movielist_banner_main_middle>p{
+    margin: 8px 0;
+    font-size: 14px;
+}
+.movielist_banner_main_middle>p:nth-child(4){
+    margin-top: 17px;
+}
+.movielist_banner_main_middle>p>i{
+    display: inline-block;
+    vertical-align: middle;
+    width: 48px;
+    height: 18px;
+    border-radius: 4px;
+    line-height: 18px;
+    font-style: normal;
+    border: 1px solid #86743c;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px 4px;
+}
+.movielist_banner_main_middle>p>span{
+    font-size: 12px;
+    margin-left: 8px;
+}
+.movielist_banner_main_opactiy{
+    position: absolute;
+    width: 700px;
+    height: 321px;
+    opacity: 1;
+    top: 0;
+    left: -80px;
+    z-index: 0;
+    background: radial-gradient(357px at top center,  #994550,#392f59);
+}
+.movielist_banner_main_right>img{
+    cursor: pointer;
+}
+.movielist_imgnav{
+    width: 1194px;
+    height: 280px;
+    background-color: #eee;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.movielist_imgnav>img{
+    width: 132px; 
+    height: 186px;
+    display: block;
+    border: 4px solid #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px rgb(167, 139, 139),
+                -1px -1px 4px rgb(214, 183, 183);
+                transition: all 0.4s;
+}
+.movielist_imgnav>i{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 46px;
+    color: white;
+    position: absolute;
+    width: 30px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.movielist_imgnav>img:hover{
+   transform: scale(1.3);
+   border: 4px solid red;
+   box-shadow: 2px 2px 6px rgb(167, 139, 139),
+                -2px -2px 6px rgb(214, 183, 183);
+}
+.movielist_imgnav>i:first-child{
+    left: 0;
+}
+.movielist_imgnav>i:last-child{
+    right: 0;
+}
+.movielist_sea{
+    width: 1194px;
+    margin: 0 auto;
+}
+.movielist_sea_head>h1{
+    font-size: 25px;
+    color: #333;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.movielist_sea_head>h1>span{
+    font-size: 18px;
+    color: #faaf00;
+    margin-left: 27px;
+}
+.movielist_sea_head>h1>span>i{
+    font-size: 14px;
+    font-style: normal;
+}
+.movielist_sea_head>p{
+    font-size: 12px;
+    color: #999;
+}
+.movielist_sea_head>p>span{
+    color: #561515;
+    margin-right: 45px;
+}
+.movielist_sea_head{
+    height: 116px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid #e5e5e5;
+}
+.movielist_sea_time{
+    display: flex;
+    align-items: center;
+    height: 82px;
+}
+.movielist_sea_time>ul>li{
+    float: left;
+    color: #b299b2;
+    font-size: 12px;
+    margin-right: 16px;
+    line-height: 23px;
+}
+.movielist_sea_time>ul>li>a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+    padding: 0 9px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+.movielist_sea_time>ul>li>a:hover{
+    background-color: #f03d37;
+    color: white;
+}
+
+.movielist_sea_table{
+    width: 100%;
+}
+
+.movielist_sea_table>thead>tr>th{
+    height: 55px;
+    /* display: flex; */
+    /* align-items: center; */
+    line-height: 55px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 900;
+}
+.movielist_sea_table>tbody td>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 82px;
+}
+.movielist_sea_table>tbody td{
+    height: 82px;
+    line-height: 82px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+}
+.movielist_sea_table>tbody td>div>p{
+    font-size: 16px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1;
+}
+.movielist_sea_table>tbody td>div>span{
+    font-size: 12px;
+    /* text-align: center; */
+    font-weight: 400;
+    color: #999;
+    line-height: 1;
+}
+.movielist_sea_table>tbody td>span{
+    color: #f03d37;
+}
+.movielist_sea_table>tbody td>span>i{
+    font-size: 12px;
+    font-style: normal;
+}
+.movielist_sea_table>tbody td>a{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 11px;
+    color: white;
+    font-size: 12px;
+    background-color: #f03d37;
+    text-decoration: none;
+    border-radius: 27px;
+    box-shadow: 3px 0 6px #f9b3b1,
+                -3px 0 6px #f9b3b1,
+                0px 3px 6px #f9b3b1,
+                0px -3px 6px #f9b3b1;
+}
+.movielist_sea_table>tbody>tr:nth-child(even){
+    background-color: #f9f9f9;
+}

@@ -26,10 +26,18 @@ function generateVerifyCode(svgElement) {
         rendersvg();
     });
     return function (value) {
-        if (!value.split('').every((item, index) => item.toLowerCase() == code[index].toLowerCase())) {
+        value = value.trim();
+        if(value.length === 4){
+           const state = value.split('').every((item, index) => item.toLowerCase() == code[index].toLowerCase())
+            if (!state) {
+                rendersvg();
+                return '验证码填写不正确';
+            }
+        }else{
             rendersvg();
             return '验证码填写不正确';
         }
+        
     }
 }
 function getRandom(min, max) {
