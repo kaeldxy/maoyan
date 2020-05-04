@@ -56,9 +56,10 @@ export default class {
                 url:'/user/login',
                 type:'post',
                 data: Object.assign(data.field, {userType: 'admin'}),
-                success({statu, msg}){
+                success({statu, msg, token}){
                     layer.msg(msg);
                     if(statu){
+                        localStorage['admin_token'] = token;
                         location.hash = '/info';
                     }
                 }

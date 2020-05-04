@@ -48,7 +48,7 @@ export default class{
             var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
             const _id = data._id;
             if (layEvent === 'del') { //删除
-                layui.layer.confirm(
+                    layer.confirm(
                     `
                         <div class="layui-form-item">
                             <label class="layui-form-label">密码</label>
