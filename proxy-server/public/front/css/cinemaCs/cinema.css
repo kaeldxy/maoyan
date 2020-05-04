@@ -1,0 +1,288 @@
+.cinema_banner{
+    height: 376px;
+    background-color: #392f59;
+    border-bottom: 90px solid #fff;
+}
+.cinema_banner_container{
+    width: 1194px;
+    margin: 0 auto;
+    /* background-color: red; */
+    height: 100%;
+    position: relative;
+    /* overflow: hidden; */
+}
+.cinema_banner_main{
+    position: absolute;
+    left: 29px;
+    top: 70px;
+    display: flex;
+    z-index: 2;
+}
+.cinema_banner_main_left>img{
+    display: block;
+    border: 4px solid #fff;
+}
+.cinema_banner_main_left>div{
+    height: 30px;
+    background-image: linear-gradient(to bottom, #f1f1f1,#fdfdfd);
+}
+
+.cinema_banner_main_middle{
+    color: white;
+    padding: 0px 0 0 28px;
+    box-sizing: border-box;
+    /* flex-grow: 1; */
+}
+.cinema_banner_main_middle>h1{
+    font-weight: 900;
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+.cinema_banner_main_middle>h2{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+.cinema_banner_main_middle>p{
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+.cinema_banner_main_middle>a:not(:last-child){
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    background: #756189;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    line-height: 36px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 0 5px;
+    margin-top: 42px;
+    transition: all 0.4s;
+}
+.cinema_banner_main_middle>a:hover{
+    background-color: #392f59;
+    color: rgb(187, 41, 41);
+}
+.cinema_banner_main_middle>a:last-child{
+    display: block;
+    width: 244px;
+    height: 39px;
+    background-color: #df2d2d;
+    font-size: 16px;
+    color: white;
+    margin-top: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    line-height: 39px;
+}
+.cinema_banner_main_right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 113px;
+    margin-top: 69px;
+}
+.cinema_banner_main_right>div{
+    display: flex;
+    height: 152px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cinema_banner_main_right>div>h2{
+    display: flex;
+    justify-content: space-between;
+    color: #ffc600;
+    height: 31px;
+    /* line-height: 31px; */
+    
+}
+.cinema_banner_main_right>div>h2>span{
+    font-size: 23px;
+    display: block;
+    margin-right: 14px;
+}
+.cinema_banner_main_right>div>h2>p{
+    font-size: 12px;
+}
+.cinema_banner_main_right>div>h2>p>i{
+    display: inline-block;
+    vertical-align: middle;
+}
+.cinema_banner_main_right>div>h2>p>b{
+    color: white;
+    font-style: normal;
+    display: block;
+}
+.cinema_banner_main_right>div>p{
+    font-size: 14px;
+    color: white;
+}
+.cinema_banner_main_right>div>h1{
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+}
+.cinema_banner_main_right>div>h1>span{
+    font-size: 12px;
+}
+.cinema_banner_main_opacity{
+    position: absolute;
+    width: 700px;
+    height: 321px;
+    opacity: 1;
+    top: 0;
+    left: -188px;
+    z-index: 0;
+    background: radial-gradient(357px at top center,  #994550,#392f59);
+}
+.cinema_nav{
+    width: 1194px;
+    margin: 0 auto;
+}
+.cinema_nav_nav {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border: 1px solid #e5e5e5;
+  margin: 0px 0; }
+
+.cinema_nav_nav > ul {
+  display: flex;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-bottom: 1px dashed #e5e5e5; }
+
+.cinema_nav_nav > ul > li:first-child {
+  width: 66px;
+  min-width: 66px;
+  color: #a5a5c2;
+  font-size: 14px;
+  text-align: center; }
+
+.cinema_nav_nav > ul > li:last-child {
+  flex-grow: 1; }
+
+.cinema_nav_nav > ul > li:last-child > ul > li {
+  float: left;
+  margin: 0 5px;
+  position: relative; }
+
+.cinema_nav_nav > ul > li:last-child > ul > li::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: width .4s, border-radius 1s; }
+
+.cinema_nav_nav > ul > li:last-child > ul > li > a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  transition: all .4s; }
+
+.cinema_nav_nav > ul > li:last-child > ul > li > a:hover {
+  color: white; }
+
+.cinema_nav_nav > ul > li:last-child > ul > li:hover::before {
+  width: 100%;
+  border-radius: 12px; }
+
+.cinema_nav_nav .cinema_nav_nav-lastul {
+  border: none; }
+
+.cinema_list{
+    width: 1194px;
+    margin: 39px auto 0;
+}
+.cinema_list_head{
+    font-size: 18px;
+    color: #333;
+    border-left: 4px solid #f03d37;
+    padding-left: 6px;
+    font-weight: 700;
+}
+.cinema_list_class{
+    height: 86px;
+    border-bottom: 1px dashed #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cinema_list_class_left>p{
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.cinema_list_class_left>span{
+    font-size: 14px;
+    color: #999;
+}
+.cinema_list_class_right>i{
+    font-style: normal;
+    font-size: 12px;
+    color: #f03d50;
+}
+.cinema_list_class_right>span{
+    font-size: 14px;
+    color: #f03d50;
+    font-weight: 700;
+}
+.cinema_list_class_right>em{
+    font-size: 12px;
+    color: #999;
+    font-style: normal;
+    margin-right: 37px;
+}
+.cinema_list_class_right>a{
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    padding: 0 11px;
+    border-radius: 30px;
+    background-color: #f03d37;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 12px;
+    box-shadow: 3px 0 6px #f9b3b1,
+                -3px 0 6px #f9b3b1,
+                0px 3px 6px #f9b3b1,
+                0px -3px 6px #f9b3b1;
+}
+.cinema-fenye {
+  width: 530px;
+  margin: 18px auto 0; }
+
+.cinema-fenye > ul > li {
+  float: left; }
+
+.cinema-fenye > ul > li > a {
+  display: block;
+  height: 32px;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 16px;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: all .5s; }
+
+.cinema-fenye > ul > li > a:hover {
+  background-color: #ef4238;
+  color: white; }

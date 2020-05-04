@@ -1,0 +1,93 @@
+
+.poll_container{
+    width: 688px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.poll_header{
+    border-bottom: 2px solid #e02025;
+}
+.poll_header img{
+    margin: 10px 0;
+    display: block;
+}
+.poll_input{
+    margin-top: 36px;
+    /* background-color: red; */
+    /* height: 400px; */
+}
+.poll_input>div{
+    width: 100%;
+}
+.poll_input>div>input{
+    width: 260px;
+    height: 35px;
+    border: 1px solid #aaaaaa;
+    color: #333;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.poll_input_text{
+    width: 105px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    margin-right: 11px;
+    color: #333;
+    font-size: 14px;
+}
+.poll_input>.poll_input_button>input{
+    width: 138px;
+    height: 22px;
+    background: #f0f0f0; 
+    font-size: 12px;
+}
+.poll_input_strong{
+    display: flex;
+}
+.poll_input_strong>p{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    font-size: 12px;
+    color: white;
+    width: 260px;
+    margin-left: 5px;
+}
+.poll_input_strong>p>span{
+    background: #eeeeee;
+    display: block;
+    width: 85px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+.poll_input>.poll_input_btn>input{
+    width: 180px;
+    height: 33px;
+    color: white;
+    background-color: #e12328;
+    font-size: 16px;
+    font-weight: 700;
+}
+.poll_input_footer>a{
+    font-size: 12px;
+    color: #ec454a;
+    text-decoration: none;
+}
+.poll_main{
+    border-bottom: 1px solid #eeeeee;
+}
+.poll_succes{
+    color: #999;
+    font-size: 12px;
+}
+.poll_footer>.poll_container{
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}

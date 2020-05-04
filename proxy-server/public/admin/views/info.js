@@ -10,15 +10,15 @@ export default class {
                         <ul class="layui-nav layui-layout-right" lay-filter="header-nav"> 
                             <li class="layui-nav-item">
                                 <a href="javascript:;">
-                                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                                    <span class=username></span>
+                                    <img src="../images/headPic/admin_head.jpg" class="layui-nav-img">
+                                    <span class="userdata-Name"></span>
                                 </a>
                                 <dl class="layui-nav-child">
                                     <dd><a href="javascript:;">基本资料</a></dd>
                                     <dd><a href="javascript:;">安全设置</a></dd>
                                 </dl>
                             </li>
-                            <li class="layui-nav-item"><a href="javascript:;">退出登陆</a></li>
+                            <li class="layui-nav-item"><a href="javascript:;" class="admin-drop-out">退出登陆</a></li>
                         </ul>
                     </div>
                     <div class="layui-side layui-bg-black">
@@ -127,10 +127,28 @@ export default class {
         this.handle()
     }
     handle() {
+        // const admin_userdata = JSON.parse(localStorage['admin_userdata']);
+        // 
+        $.ajax({
+            url:'/user/getpayload',
+            data:{},
+            type:'post',
+            success({userName}){
+                $('.userdata-Name').text('当前登陆用户：' + userName);
+            }
+        })
         layui.element.on('nav(maoyan-nav)', function (elem) {
             const data = elem[0].dataset;
             $('#app-title').html(data.hashtext);
             location.hash = '/info/' + data.hash + '-' + (data.option ? data.option : '');
+        })
+        $('.admin-drop-out').on('click', function () {
+            layer.confirm('你确定退出吗', function (index) {
+                localStorage.removeItem('admin_token');
+                localStorage.removeItem('admin_userdata');
+                layer.close(index);
+                location.hash = '/login';
+            })
         })
     }
 }
