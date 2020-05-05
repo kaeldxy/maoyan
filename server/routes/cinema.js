@@ -22,5 +22,5 @@ router.post('/update', async function (req, res, next) {
     const data = await cinemaService.update({ userName, pwd, userType });
     res.send(data);
 });
-
+//阿桑大神大大的是
 module.exports = router;
