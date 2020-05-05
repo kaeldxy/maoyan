@@ -12,4 +12,3 @@ require("./module/frontUserModule.js");
 require("./module/movieModule.js");
 require("./module/cinemaModule.js");
 require("./module/theaterModule.js");
-require('./module/seatModule.js');
