@@ -1,4 +1,4 @@
-export default class {
+﻿export default class {
     constructor(el) {
         this.el = $(el);
         this.template = 

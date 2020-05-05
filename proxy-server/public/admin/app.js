@@ -8,6 +8,9 @@ import movieUpdate from './views/movie/movieUpdate.js';
 import userList from './views/user/userList.js';
 import userAdd from './views/user/userAdd.js';
 import userUpdate from './views/user/userUpdate.js';
+import cinemaList from './views/cinema/cinemaList.js'
+import cinemaUpdate from './views/cinema/cinemaUpdate.js';
+import cinemaAdd from './views/cinema/cinemaAdd.js';
 //这里是二级路由
 
 const all = { //将导入的二级模块存入all对象，方便下面使用，
@@ -17,8 +20,12 @@ const all = { //将导入的二级模块存入all对象，方便下面使用，
     userList,
     userAdd,
     userUpdate,
+    cinemaList,
+    cinemaAdd,
+    cinemaUpdate,
 }
 let infoExited = true;  //防止多次挂载info页面
+
 const firstMount = '#app'; //一级路由挂载点
 const secondMount = '#app-content'; //二级路由挂载点
 
@@ -89,7 +96,7 @@ async function appInit() { //加载layui模块 并且初始化路由
         }
     });
     await new Promise(r => {
-        layui.use(['form', 'table', 'element'], function () { // 导入layui模块，后期要使用其他模块自行加入
+        layui.use(['form', 'table', 'element', 'upload'], function () { // 导入layui模块，后期要使用其他模块自行加入
             r();
         })
     })
