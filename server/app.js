@@ -6,6 +6,7 @@ var logger = require('morgan');
 require('./dao/db.js'); // 链接数据库  数据库名是  maoyan
 
 var userRouter = require('./routes/user.js');
+var cinemaRouter = require('./routes/cinema.js');
 
 var app = express();
 
@@ -20,7 +21,7 @@ app.use(cookieParser());
 
 
 app.use('/user', userRouter);
-
+app.use('/cinema', cinemaRouter);
 
 
 
