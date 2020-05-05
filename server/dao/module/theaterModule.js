@@ -9,6 +9,7 @@ const theaterSchema = mongoose.Schema({//骨架，结构
             {row: Number, col: Number}, // 表示空位, 第几行第几列是空的，可以多加
         ]
     },
+    cinemaId: String, //存所从属的影院ID  type: mongoose.Schema.Types.ObjectId, ref: 'theaterModule'
 }, { versionKey: false });
 const theaterModule = mongoose.model('theaters', theaterSchema);//创建模型
 

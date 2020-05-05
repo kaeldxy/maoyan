@@ -3,8 +3,8 @@ var router = express.Router();
 const cinemaService = require('../service/cinema.js');
 
 router.get('/get', async function (req, res, next) {
-    const { limit, page } = req.query;
-    const data = await cinemaService.get({ userName, pwd, userType });
+    const { limit, page, condition } = req.query;
+    const data = await cinemaService.get({ limit, page, condition  });
     res.send(data);
 });
 router.post('/add', async function (req, res, next) {
@@ -18,9 +18,9 @@ router.post('/del', async function (req, res, next) {
     res.send(data);
 });
 router.post('/update', async function (req, res, next) {
-    const { userName, pwd, userType } = req.body;
-    const data = await cinemaService.update({ userName, pwd, userType });
+    const dataUpdate = req.body;
+    const data = await cinemaService.update(dataUpdate);
     res.send(data);
 });
-//阿桑大神大大的是
+
 module.exports = router;

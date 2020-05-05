@@ -1,12 +1,14 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+
+
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { httpPoxy } = require("./utils/autoRequest.js");
 const jwtAuth = require('./utils/authToken.js');
 var userRouter = require('./routes/user.js');
-
+var cinemaUploadRouter = require('./routes/cinemaUpload.js');
 
 var app = express();
 
@@ -26,6 +28,7 @@ app.use(cookieParser());
 
 
 app.use('/user', userRouter);
+app.use('/cinema', cinemaUploadRouter);
 
 
 
