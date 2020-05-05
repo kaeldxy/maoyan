@@ -38,7 +38,7 @@ export default class {
                         <div class="layui-form-item">
                             <label class="layui-form-label">同意</label>
                             <div class="layui-input-inline">
-                            <input type="checkbox" lay-verify="agree" name="switch" lay-skin="switch">
+                            <input type="checkbox" lay-verify="agree" lay-skin="switch">
                             </div>
                             <div class="layui-form-mid layui-word-aux"><a href="javascript:;" style="color:red;">《用户协议》</a></div>
                         </div>
@@ -69,7 +69,8 @@ export default class {
                 }
             },
             agree: function (value, item) {
-                if(!item.ckecked){
+                
+                if(!item.checked){
                     return '必须同意协议'
                 }
             }
