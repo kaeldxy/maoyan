@@ -28,22 +28,24 @@ module.exports = {
     },
     get: async ({ condition, limit, page, userType }) => {
         const model = getModel(userType, userModule);
-        limit = ~~limit;
-        page = ~~page;
-        let data;
         if (condition) {
-            const reg = new RegExp(condition);
-            data = await model.find({ userName: reg }, { userName: 1, lastTime: 1 }).skip((page - 1) * limit).limit(limit);
+            if (condition.all){  //存在all字段，就查 全部
+                const data = await model.find({}, 'userName');
+                return data;
+            }
         } else {
-            data = await model.find({}, 'userName lastTime').skip((page - 1) * limit).limit(limit);
+            limit = ~~limit;
+            page = ~~page;
+            const data = await model.find({}, 'userName lastTime').skip((page - 1) * limit).limit(limit);
+            const count = await model.countDocuments();
+            return {
+                "code": 0,
+                "msg": "",
+                count,
+                data,
+            }
         }
-        let count = await model.count();
-        return {
-            "code": 0,
-            "msg": "",
-            count,
-            data,
-        }
+        
     },
     del: async ({ _id, pwd, userType}) => {
         const model = getModel(userType, userModule);

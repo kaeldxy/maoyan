@@ -5,9 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('./dao/db.js'); // 链接数据库  数据库名是  maoyan
 
-var userRouter = require('./routes/user.js');
-var cinemaRouter = require('./routes/cinema.js');
-
+var userRouter = require('./routes/user.js'); //用户
+var cinemaRouter = require('./routes/cinema.js'); // 影院
+var theaterRouter = require('./routes/theater.js'); //放映厅
+var scheduleRouter = require('./routes/schedule.js'); //排片
+var movieRouter = require('./routes/movie.js'); // 电影
+var orderRouter = require('./routes/order.js');  //订单
 var app = express();
 
 
@@ -22,9 +25,10 @@ app.use(cookieParser());
 
 app.use('/user', userRouter);
 app.use('/cinema', cinemaRouter);
-
-
-
+app.use('/schedule', scheduleRouter);
+app.use('/theater', theaterRouter);
+app.use('/movie', movieRouter);
+app.use('/order', orderRouter);
 
 
 

@@ -11,6 +11,15 @@ import userUpdate from './views/user/userUpdate.js';
 import cinemaList from './views/cinema/cinemaList.js'
 import cinemaUpdate from './views/cinema/cinemaUpdate.js';
 import cinemaAdd from './views/cinema/cinemaAdd.js';
+import theaterList from './views/theater/theaterList.js'
+import theaterUpdate from './views/theater/theaterUpdate.js';
+import theaterAdd from './views/theater/theaterAdd.js';
+import scheduleList from './views/schedule/scheduleList.js'
+import scheduleUpdate from './views/schedule/scheduleUpdate.js';
+import scheduleAdd from './views/schedule/scheduleAdd.js';
+import orderList from './views/order/orderList.js'
+import orderUpdate from './views/order/orderUpdate.js';
+import orderAdd from './views/order/orderAdd.js';
 //这里是二级路由
 
 const all = { //将导入的二级模块存入all对象，方便下面使用，
@@ -23,6 +32,15 @@ const all = { //将导入的二级模块存入all对象，方便下面使用，
     cinemaList,
     cinemaAdd,
     cinemaUpdate,
+    theaterList,
+    theaterUpdate,
+    theaterAdd,
+    scheduleList,
+    scheduleUpdate,
+    scheduleAdd,
+    orderList,
+    orderUpdate,
+    orderAdd
 }
 let infoExited = true;  //防止多次挂载info页面
 
@@ -62,7 +80,6 @@ var routes = {
                 new all[target](secondMount);
             }
         }
-
     }
 };
 var router = Router(routes).configure({

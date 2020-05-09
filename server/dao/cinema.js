@@ -1,16 +1,21 @@
 const cinemaModule = require('./module/cinemaModule.js');
 module.exports = {
     get: async ({ limit, page, condition }) => {
-        limit = ~~limit;
-        page = ~~page;
         let data;
-        const count = await cinemaModule.count();
+        const count = await cinemaModule.count()
         if(!condition){
+            limit = ~~limit;
+            page = ~~page;
             data = await cinemaModule.find({}).skip((page - 1) * limit).limit(limit);
+            return { code: 0, msg: '', count, data };
         }else{
-            data = {}
+            if(condition.all){
+                return await cinemaModule.find();
+            }else if(condition._id){
+                return await cinemaModule.find({ _id: condition._id});
+            }
         }
-        return { code: 0, msg: '', count, data };
+        
     },
     add: async (dataAdd) => {
         await cinemaModule.create(dataAdd);

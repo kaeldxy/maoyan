@@ -74,17 +74,17 @@ export default class {
                                     <dl class="layui-nav-child">
                                         <dd>
                                             <a class="layui-anim-scaleSpring layui-anim" href="javascript:;" data-hash="theaterList" data-hashtext="放映厅管理/放映厅列表">放映厅列表</a>
-                                        </dd>  
+                                        </dd>
                                         <dd>
                                             <a class="layui-anim-scaleSpring layui-anim" href="javascript:;" data-hash="theaterAdd" data-hashtext="放映厅管理/添加放映厅">添加放映厅</a>
                                         </dd>  
                                     </dl>
                                 </li>
                                 <li class="layui-nav-item">
-                                    <a href="javascript:;" data-hash="scheduleList" data-hashtext="排片管理/添加排片">排片管理</a>
+                                    <a href="javascript:;" data-hash="scheduleList" data-hashtext="排片管理/排片列表">排片管理</a>
                                     <dl class="layui-nav-child" >
                                         <dd>
-                                            <a class="layui-anim-scaleSpring layui-anim" href="javascript:;" data-hash="scheduleList" data-hashtext="排片管理/添加排片">排片列表</a>
+                                            <a class="layui-anim-scaleSpring layui-anim" href="javascript:;" data-hash="scheduleList" data-hashtext="排片管理/排片列表">排片列表</a>
                                         </dd>  
                                         <dd>
                                             <a class="layui-anim-scaleSpring layui-anim" href="javascript:;" data-hash="scheduleAdd" data-hashtext="排片管理/添加排片">添加排片</a>
@@ -92,10 +92,10 @@ export default class {
                                     </dl>
                                 </li>
                                 <li class="layui-nav-item">
-                                    <a href="javascript:;" data-hash="orderList" data-hashtext="订单管理/添加订单">订单管理</a>
+                                    <a href="javascript:;" data-hash="orderList" data-hashtext="订单管理/订单列表">订单管理</a>
                                     <dl class="layui-nav-child">
                                         <dd>
-                                            <a class="layui-anim-scaleSpring layui-anim" href="javascript:;"data-hash="orderList" data-hashtext="订单管理/添加订单">订单列表</a>
+                                            <a class="layui-anim-scaleSpring layui-anim" href="javascript:;"data-hash="orderList" data-hashtext="订单管理/订单列表">订单列表</a>
                                         </dd>  
                                         <dd>
                                             <a class="layui-anim-scaleSpring layui-anim" href="javascript:;"data-hash="orderAdd" data-hashtext="订单管理/添加订单">添加订单</a>
@@ -127,8 +127,6 @@ export default class {
         this.handle()
     }
     handle() {
-        // const admin_userdata = JSON.parse(localStorage['admin_userdata']);
-        // 
         $.ajax({
             url:'/user/getpayload',
             data:{},
