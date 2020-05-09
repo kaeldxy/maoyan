@@ -1,9 +1,9 @@
 
 export default class {
-    constructor(el){
+    constructor(el) {
         this.el = $(el);
-        this.template = 
-        `
+        this.template =
+            `
                 <div class="cinemaUpdate-page">
                     <form class="layui-form" action="" id="cinemaUpdate" lay-filter="cinemaUpdate">
                         <div class="layui-form-item">
@@ -55,23 +55,22 @@ export default class {
         `;
         this.init()
     }
-    init(){
+    init() {
         this.el.html(this.template);
         this.handle()
     }
-    handle(){
-        let posterSrc;
+    handle() {
         let statu = false;
         layui.form.render();
         const cinemaupdatedata = JSON.parse(localStorage['cinemaupdatedata']);
         const _id = cinemaupdatedata._id;
-        if (cinemaupdatedata.posterSrc){
+        if (cinemaupdatedata.posterSrc) {
             $('#show-poster-update').attr('src', '../' + cinemaupdatedata.posterSrc)
         }
         layui.form.val('cinemaUpdate', cinemaupdatedata);
         localStorage.removeItem('cinemaupdatedata');
         layui.upload.render({
-            url: '/cinema/upload'
+            url: '/single/posterUpload'
             , elem: '#poster-choose'
             , accept: 'images'
             , auto: false
@@ -83,39 +82,39 @@ export default class {
                 });
             }
             , done: function (res, index, upload) {
-                statu = true;
-                posterSrc = res.path;
+                
+                cinemaupdatedata.posterSrc = res.path;
                 //获取当前触发上传的元素，一般用于 elem 绑定 class 的情况，注意：此乃 layui 2.1.0 新增
             }
         })
-        
+
         layui.form.verify({
             choose: function () {
-                if (!$('#show-poster-update').attr('src')) {
+                if (!cinemaupdatedata.posterSrc) {
                     return '请选择一张图片'
-                }
+                } 
             }
         })
         layui.form.on('submit(cinemaUpdate)', function (data) {
-            let timeid = setInterval(() => {
-                if(statu){
-                    Object.assign(cinemaupdatedata, data.field)
-                    Object.assign(cinemaupdatedata, {posterSrc})
-                    delete cinemaupdatedata.poster;
-                    $.ajax({
-                        url: '/api/cinema/update',
-                        type: 'post',
-                        data: cinemaupdatedata,
-                        success({ statu, msg }) {
-                            layer.msg(msg)
-                            if (statu) {
-                                $('#show-poster').attr('src', '');
-                            }
+            let timeid = setTimeout(() => {
+
+                Object.assign(cinemaupdatedata, data.field)
+                delete cinemaupdatedata.poster;
+                $.ajax({
+                    url: '/api/cinema/update',
+                    type: 'post',
+                    data: cinemaupdatedata,
+                    success({ statu, msg }) {
+                        layer.msg(msg)
+                        if (statu) {
+                            clearInterval(timeid);
+                            location.hash = '/info/cinemaList'
                         }
-                    })
-                    clearInterval(timeid);
-                }
-            }, 1);
+                    }
+                })
+
+
+            }, 500);
             return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         });
     }
