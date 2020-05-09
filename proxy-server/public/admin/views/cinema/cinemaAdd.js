@@ -64,7 +64,7 @@ export default class {
         let statu = false;
         layui.form.render();
         layui.upload.render({
-            url: '/cinema/upload'
+            url: '/single/posterUpload'
             , elem: '#poster-choose'
             , accept: 'images'
             , auto: false
@@ -72,7 +72,7 @@ export default class {
             , field: 'poster'
             , choose: function (obj) {
                 obj.preview(function (index, file, result) {
-                    $('#show-poster').attr('src', getFileURL(file));
+                    $('#show-poster').attr('src', result);
                 })
                 //obj.resetFile(index, file, '123.jpg'); //重命名文件名，layui 2.3.0 开始新
             }
@@ -84,31 +84,32 @@ export default class {
         })
         layui.form.verify({
             choose: function () {
-                if (!$('#show-poster').attr('src')){
+                if (!$('#show-poster').attr('src')) {
                     return '请选择一张图片'
                 }
             }
         })
         layui.form.on('submit(cinemaAdd)', function (data) {
-            let timeid = setInterval(() => {
-                if(statu){
-                    Object.assign(data.field, { posterSrc })
-                    delete data.field.poster;
-                    $.ajax({
-                        url: '/api/cinema/add',
-                        type: 'post',
-                        data: data.field,
-                        success({ statu, msg }) {
-                            layer.msg(msg)
-                            if (statu) {
-                                $('#show-poster').attr('src', '');
-                            }
+            let timeid = setTimeout(() => {
+
+                Object.assign(data.field, { posterSrc })
+                delete data.field.poster;
+                $.ajax({
+                    url: '/api/cinema/add',
+                    type: 'post',
+                    data: data.field,
+                    success({ statu, msg }) {
+                        layer.msg(msg)
+                        if (statu) {
+                            clearTimeout(timeid);
+                            location.hash = '/info/cinemaList'
                         }
-                    })
-                    clearInterval(timeid);
-                }
-                
-            }, 1);
+                    }
+                })
+
+
+
+            }, 500);
             return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
         });
     }

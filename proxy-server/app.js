@@ -8,8 +8,8 @@ var logger = require('morgan');
 const { httpPoxy } = require("./utils/autoRequest.js");
 const jwtAuth = require('./utils/authToken.js');
 var userRouter = require('./routes/user.js');
-var cinemaUploadRouter = require('./routes/cinemaUpload.js');
-
+var singleUploadRouter = require('./routes/singleUpload.js');
+var arrayUploadRouter = require('./routes/arrayUpload.js');
 var app = express();
 
 
@@ -28,8 +28,8 @@ app.use(cookieParser());
 
 
 app.use('/user', userRouter);
-app.use('/cinema', cinemaUploadRouter);
-
+app.use('/single', singleUploadRouter);
+app.use('/array', arrayUploadRouter);
 
 
 

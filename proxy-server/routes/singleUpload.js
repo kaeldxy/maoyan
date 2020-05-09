@@ -3,15 +3,15 @@ var express = require('express');
 var router = express.Router();
 const { rootPath } = require('../utils/baseinfo.js')
 const multer = require('multer');
-const path = require("path")
+const path = require("path");
 const fs = require("fs");
 
 
-const upload = multer({ dest: path.join(rootPath, "/public/images/poster") });//** 
+const posterUpload = multer({ dest: path.join(rootPath, "/public/images/poster") }); // 海报上传路径, 单文件上传
 
-
-/* GET users listing. */ // 我这里就不做分层：我懒、这里只有两层
-router.post('/upload', upload.single('poster'), async function (req, res, next) {//** 
+ // single/posterUpload
+router.post('/posterUpload', posterUpload.single('poster'), async function (req, res, next) {
+    
     const originalname = req.file.path;
     const newname = originalname + path.extname(req.file.originalname);
 
